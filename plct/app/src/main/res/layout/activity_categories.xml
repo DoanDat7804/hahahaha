@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <ImageButton
+        android:id="@+id/btnProfile"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="top|end"
+        android:layout_margin="16dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:contentDescription="Profile" />
+
+    <!-- Tiêu đề "Danh mục" -->
+    <TextView
+        android:id="@+id/tvDanhMuc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Danh mục"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Hai ô hiển thị số dư và chi tiêu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <!-- Ô số dư -->
+
+        <LinearLayout
+            android:id="@+id/llSoDu"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/sodu"
+            android:elevation="4dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="8dp">
+
+            <TextView
+                android:id="@+id/tvSoDuLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số dư"
+                android:textColor="#000000"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvSoDuAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 đ"
+                android:textColor="#000000"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/llChiTieu"
+            android:background="@drawable/chitieu"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp"
+            android:elevation="4dp"
+            android:layout_marginStart="8dp">
+
+            <TextView
+                android:id="@+id/tvChiTieuLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chi tiêu"
+                android:textSize="16sp"
+                android:textColor="#000000"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvChiTieuAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0 đ"
+                android:textSize="18sp"
+                android:textColor="#FF0000"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Danh sách danh mục -->
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            &lt;!&ndash; Danh sách danh mục &ndash;&gt;-->
+<!--            <ScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_weight="1">-->
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="vertical">-->
+
+<!--                    &lt;!&ndash; Danh mục gốc &ndash;&gt;-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="match_parent"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:orientation="horizontal"-->
+<!--                        android:background="@drawable/rounded_corner"-->
+<!--                        android:padding="16dp"-->
+<!--                        android:layout_marginBottom="8dp"-->
+<!--                        android:elevation="2dp"-->
+<!--                        android:gravity="center_vertical">-->
+
+<!--                        <ImageView-->
+<!--                            android:layout_width="40dp"-->
+<!--                            android:layout_height="40dp"-->
+<!--                            android:src="@drawable/food1"-->
+<!--                            android:layout_marginEnd="16dp" />-->
+
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Đồ ăn"-->
+<!--                            android:textSize="18sp"-->
+<!--                            android:textColor="#000000"-->
+<!--                            android:textStyle="bold" />-->
+<!--                    </LinearLayout>-->
+
+<!--                </LinearLayout>-->
+<!--            </ScrollView>-->
+
+
+<!--            &lt;!&ndash; Tiếp tục thêm danh mục khác nếu cần &ndash;&gt;-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewDanhMuc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabAddCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:src="@android:drawable/ic_input_add"
+            android:contentDescription="Thêm danh mục"
+            android:backgroundTint="#4CAF50"
+            app:fabSize="mini"
+            app:elevation="6dp"
+            app:borderWidth="0dp"
+            android:layout_marginEnd="16dp"/>
+
+        <!-- Nút thêm danh mục (hình tròn) -->
+        <Button
+            android:id="@+id/btnHistory"
+            android:layout_width="293dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00D09E"
+            android:padding="12dp"
+            android:text="Lịch sử chi tiêu"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+
+    </FrameLayout>
+</LinearLayout>

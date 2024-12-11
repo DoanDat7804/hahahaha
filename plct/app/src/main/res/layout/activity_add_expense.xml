@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Header với nút Back và Tiêu đề -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="16dp">
+
+            <!-- Nút Back -->
+            <Button
+                android:id="@+id/btn_back"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_back_button"
+                android:contentDescription="Back"
+                android:padding="20dp"
+                android:layout_marginEnd="8dp" />
+
+            <!-- Tiêu đề -->
+            <TextView
+                android:id="@+id/add_expense_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thêm Chi Phí"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- Nhập tên chi phí -->
+        <EditText
+            android:id="@+id/input_expense_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tên chi phí (ví dụ: Ăn trưa)"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Chọn danh mục -->
+        <Spinner
+            android:id="@+id/spinner_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:padding="12dp"
+            android:background="@color/cardview_light_background" />
+
+        <!-- Nhập số tiền -->
+        <EditText
+            android:id="@+id/input_expense_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Số tiền (VNĐ)"
+            android:inputType="numberDecimal"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Chọn ngày -->
+        <TextView
+            android:id="@+id/label_select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ngày chi tiêu:"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="8dp" />
+
+        <Button
+            android:id="@+id/btn_select_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chọn ngày"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF" />
+
+        <TextView
+            android:id="@+id/selected_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chưa chọn ngày"
+            android:textSize="14sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Nhập mô tả -->
+        <EditText
+            android:id="@+id/input_expense_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Mô tả chi tiết (không bắt buộc)"
+            android:padding="12dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="12dp"
+            android:minLines="3"
+            android:gravity="top" />
+
+        <!-- Nút lưu -->
+        <Button
+            android:id="@+id/btn_save_expense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lưu"
+            android:backgroundTint="#4CAF50"
+            android:textColor="#FFFFFF"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

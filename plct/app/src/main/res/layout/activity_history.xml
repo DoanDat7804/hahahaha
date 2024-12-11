@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F5F5F5">
+
+    <!-- Nút quay lại và tiêu đề -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="16dp">
+
+        <!-- Nút quay lại -->
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Quay lại"
+            android:src="@drawable/ic_back_button"
+            app:tint="#000000" />
+
+
+        <!-- Tiêu đề -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lịch sử chi tiêu"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:textColor="#000000" />
+    </LinearLayout>
+
+    <!-- Ô chọn thời gian -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp">
+
+        <!-- Ô chọn "Từ ngày" -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/calendar"
+                android:contentDescription="Lịch"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/tvStartDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="01/12/2024"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+
+        <!-- Mũi tên -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/muitenphai"
+            android:contentDescription="Mũi tên"
+            android:padding="12dp"
+            app:tint="#000000" />
+
+        <!-- Ô chọn "Đến ngày" -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:background="@drawable/rounded_corner"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/calendar"
+                android:contentDescription="Lịch"
+                app:tint="#000000" />
+
+            <TextView
+                android:id="@+id/tvEndDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="02/12/2024"
+                android:textSize="16sp"
+                android:textColor="#000000" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Nút tìm kiếm -->
+    <Button
+        android:id="@+id/btnSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tìm kiếm"
+        android:textSize="16sp"
+        android:backgroundTint="#00D09E"
+        android:textColor="#FFFFFF"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:elevation="4dp" />
+
+    <!-- Bảng hiển thị lịch sử chi tiêu -->
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_weight="1">-->
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="vertical">-->
+
+<!--            &lt;!&ndash; Một mục chi tiêu &ndash;&gt;-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:orientation="vertical"-->
+<!--                android:background="@drawable/rounded_corner"-->
+<!--                android:padding="16dp"-->
+<!--                android:layout_marginBottom="8dp"-->
+<!--                android:elevation="2dp">-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvExpenseName"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Tên chi tiêu: Ăn lẩu"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textColor="#000000"-->
+<!--                    android:textStyle="bold" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvExpenseAmount"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Số tiền: 200,000 đ"-->
+<!--                    android:textSize="16sp"-->
+<!--                    android:textColor="#FF0000"-->
+<!--                    android:layout_marginTop="4dp" />-->
+
+<!--                <TextView-->
+<!--                    android:id="@+id/tvExpenseDate"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Thời gian: 01/12/2024"-->
+<!--                    android:textSize="14sp"-->
+<!--                    android:textColor="#808080"-->
+<!--                    android:layout_marginTop="4dp" />-->
+<!--            </LinearLayout>-->
+<!--        </LinearLayout>-->
+<!--    </ScrollView>-->
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewExpenseHistory"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tvEmptyHistory"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Không có chi tiêu nào!"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <!-- Tổng chi tiêu -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp"
+        android:background="#E0E0E0">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng:"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tổng chi tiêu: 0.0 đ"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            android:textColor="#000000"/>
+    </LinearLayout>
+</LinearLayout>
